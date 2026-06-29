@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نماء | صدقة جارية تنمو لأجلك</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* إعدادات المتغيرات والألوان المتطابقة مع الصورة */
+        :root {
+            --primary: #0b5932;       /* الأخضر الداكن الأساسي للتطبيق */
+            --primary-rgb: 11, 89, 50;
+            --accent: #12a154;        /* الأخضر المضيء للأزرار والأيقونات */
+            --bg-light: #f4fbf7;      /* الخلفية الفاتحة المائلة للخضار */
+            --bg-white: #ffffff;
+            --text-dark: #1f382b;     /* نصوص غامقة متناسقة مع الهوية */
+            --text-muted: #667d71;
+            --card-shadow: 0 15px 35px rgba(11, 89, 50, 0.05);
+            --phone-border: #1a1a1a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-white);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* شريط التنقل العلوي (Navbar) */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.02);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .logo-slogan {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a.active, .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .btn-download-nav {
+            background-color: var(--primary);
+            color: var(--bg-white);
+            padding: 10px 22px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .btn-download-nav:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* تصميم محاكي الهاتف الأساسي ذو الجودة العالية */
+        .phone-frame {
+            width: 290px;
+            height: 590px;
+            border: 11px solid var(--phone-border);
+            border-radius: 40px;
+            position: relative;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            background: #fff;
+            overflow: hidden;
+        }
+
+        /* الجزيرة التفاعلية الفوقية للهاتف (Dynamic Island) */
+        .phone-frame::before {
+            content: '';
+            position: absolute;
+            top: 11px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 85px;
+            height: 22px;
+            background: var(--phone-border);
+            border-radius: 20px;
+            z-index: 10;
+        }
+
+        .phone-content {
+            width: 100%;
+            height: 100%;
+            background: #fdfdfd;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        /* إخفاء شريط التمرير داخل محاكي الهاتف */
+        .phone-content::-webkit-scrollbar { display: none; }
+
+        /* القسم ترحيبي (Hero Section) */
+        .hero-section {
+            background: linear-gradient(145deg, var(--bg-light) 0%, #ffffff 100%);
+            padding: 160px 20px 80px 20px;
+            position: relative;
+        }
+
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-content-box {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-content-box h1 {
+            font-size: 46px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .hero-content-box p {
+            font-size: 18px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 20px rgba(11, 89, 50, 0.15);
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: #fff;
+        }
+
+        .hero-phone-display {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* محاكاة واجهة التطبيق داخل الهاتف الرئيسي */
+        .app-screen-mock {
+            padding: 40px 15px 20px 15px;
+        }
+        .app-header-mock {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .app-card-mock {
+            background: #fff;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            margin-bottom: 15px;
+            border: 1px solid #f0f5f2;
+        }
+
+        /* قسم لماذا نماء */
+        .why-section {
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+            margin: 12px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .why-grid {
+            max-width: 1280px;
+            margin: 50px auto 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .why-card {
+            background-color: var(--bg-white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #f2f8f5;
+            transition: transform 0.3s;
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .why-icon-box {
+            width: 70px;
+            height: 70px;
+            background-color: var(--bg-light);
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px auto;
+            color: var(--primary);
+            font-size: 28px;
+        }
+
+        .why-card h3 {
+            font-size: 20px;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .why-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* قسم تجربة تطبيق متكاملة (الخلفية الداكنة المتداخلة مع الهواتف) */
+        .experience-section {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 80px 20px;
+            overflow: hidden;
+        }
+
+        .experience-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .experience-text h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .experience-text p {
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 500px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .store-badges {
+            display: flex;
+            gap: 15px;
+        }
+
+        .store-badges img {
+            height: 45px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .store-badges img:hover {
+            transform: scale(1.05);
+        }
+
+        /* الهواتف الثلاثة المتداخلة في العرض الكلي */
+        .experience-phones {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 500px;
+            height: 520px;
+        }
+
+        .exp-phone {
+            position: absolute;
+            transform: scale(0.85);
+            transition: all 0.3s;
+        }
+
+        .exp-phone.left {
+            left: 0;
+            z-index: 1;
+            transform: scale(0.75) translateX(30px) rotate(-5deg);
+            opacity: 0.8;
+        }
+
+        .exp-phone.center {
+            z-index: 2;
+            transform: scale(0.85);
+        }
+
+        .exp-phone.right {
+            right: 0;
+            z-index: 1;
+            transform: scale(0.75) translateX(-30px) rotate(5deg);
+            opacity: 0.8;
+        }
+
+        /* قسم كيف يعمل نماء */
+        .steps-section {
+            padding: 100px 20px;
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+
+        .steps-timeline {
+            max-width: 1100px;
+            margin: 60px auto 0 auto;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        /* الخط الواصل المقطع بين المراحل */
+        .steps-timeline::before {
+            content: '';
+            position: absolute;
+            top: 45px;
+            left: 50px;
+            right: 50px;
+            height: 2px;
+            border-top: 3px dashed #cbdad2;
+            z-index: 1;
+        }
+
+        .step-node {
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            padding: 0 15px;
+        }
+
+        .step-number-circle {
+            width: 90px;
+            height: 90px;
+            background-color: #fff;
+            border: 4px solid var(--accent);
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px auto;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+        }
+
+        .step-node h4 {
+            font-size: 18px;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .step-node p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* قسم مشاريع تصنع الأثر */
+        .projects-section {
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .projects-grid {
+            max-width: 1280px;
+            margin: 50px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            border: 1px solid #f2f8f5;
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-img-holder {
+            height: 180px;
+            background-color: #e3ede8;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a3bfb2;
+            font-size: 40px;
+        }
+
+        .project-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--primary);
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .project-body {
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .project-body h3 {
+            font-size: 19px;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .project-body p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .progress-container {
+            margin-bottom: 15px;
+        }
+
+        .progress-bar-bg {
+            height: 8px;
+            background-color: #e6f2ec;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--accent);
+            border-radius: 10px;
+        }
+
+        .progress-stats {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* شريط الأرقام والإحصائيات */
+        .stats-banner {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 60px 20px;
+        }
+
+        .stats-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item i {
+            font-size: 32px;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .stat-item h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            opacity: 0.85;
+        }
+
+        /* قسم آراء المساهمين */
+        .testimonials-section {
+            padding: 100px 20px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .testimonials-grid {
+            max-width: 1280px;
+            margin: 50px auto 30px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-light);
+            padding: 35px;
+            border-radius: 20px;
+            text-align: right;
+            position: relative;
+            border: 1px solid #ebf5ef;
+        }
+
+        .quote-icon {
+            color: var(--accent);
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-card p {
+            font-size: 15px;
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .user-avatar {
+            width: 45px;
+            height: 45px;
+            background-color: #cbdad2;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .user-info h5 {
+            font-size: 15px;
+            color: var(--text-dark);
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #cbdad2;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: var(--primary);
+            width: 20px;
+        }
+
+        /* الفوتر (تذييل الصفحة الشامل مع شاشة التحميل السفلية) */
+        footer {
+            background-color: #06311b;
+            color: #fff;
+            padding: 100px 20px 30px 20px;
+            position: relative;
+        }
+
+        .footer-cta-container {
+            max-width: 1280px;
+            margin: 0 auto 80px auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--primary);
+            border-radius: 30px;
+            padding: 0 60px;
+            height: 280px;
+            position: relative;
+        }
+
+        .footer-cta-text h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .footer-cta-text p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+
+        /* جعل الهاتف يبرز من الفوتر بشكل أنيق جداً */
+        .footer-phone-wrapper {
+            position: relative;
+            height: 100%;
+            width: 300px;
+        }
+
+        .footer-phone {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform: translateY(30px);
+        }
+
+        .footer-main-links {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 50px;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            line-height: 1.7;
+            opacity: 0.7;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.7;
+            font-size: 14px;
+            transition: opacity 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 18px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .social-icons a:hover {
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        .copyright-bar {
+            text-align: center;
+            padding-top: 30px;
+            font-size: 13px;
+            opacity: 0.5;
+        }
+
+        /* التوافقية الكاملة مع الشاشات والهواتف (Responsive Design) */
+        @media (max-width: 992px) {
+            .hero-container, .experience-container, .footer-cta-container, .footer-main-links {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+            .footer-main-links {
+                grid-template-columns: 1fr;
+            }
+            .hero-content-box { max-width: 100%; }
+            .hero-actions, .store-badges { justify-content: center; }
+            .experience-phones { width: 100%; height: auto; display: none; } /* نخفي المتداخل في الشاشات الصغيرة لضمان تجربة ممتازة */
+            .steps-timeline { flex-direction: column; gap: 40px; }
+            .steps-timeline::before { display: none; }
+            .footer-cta-container { height: auto; padding: 40px 20px; }
+            .footer-phone-wrapper { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo-area">
+                <span class="logo-text">نماء <i class="fa-solid fa-seedling" style="font-size: 20px; color: var(--accent);"></i></span>
+                <span class="logo-slogan">صدقة جارية تنمو لأجلك</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#" class="active">الرئيسية</a></li>
+                <li><a href="#why">عن نماء</a></li>
+                <li><a href="#projects">مشاريعنا</a></li>
+                <li><a href="#how">كيف يعمل</a></li>
+                <li><li><a href="#testimonials">الأسئلة الشائعة</a></li></li>
+            </ul>
+            <a href="#" class="btn-download-nav">
+                <i class="fa-solid fa-download"></i> تحميل التطبيق
+            </a>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content-box">
+                <h1>صدقة جارية تنمو لأجلك</h1>
+                <p>منصة تمنحك فرصة لإحداث أثر مستمر من خلال دعم المشاريع الخيرية والمساهمة في بناء مستقبل أفضل.</p>
+                <div class="hero-actions">
+                    <a href="#" class="btn-primary"><i class="fa-solid fa-download"></i> حمل التطبيق الآن</a>
+                    <a href="#projects" class="btn-outline">تعرف على المشاريع</a>
+                </div>
+            </div>
+            
+            <div class="hero-phone-display">
+                <div class="phone-frame">
+                    <div class="phone-content">
+                        <div class="app-screen-mock">
+                            <div class="app-header-mock">
+                                <span style="font-weight:700; color:var(--primary)">نماء 🌱</span>
+                                <i class="fa-regular fa-bell"></i>
+                            </div>
+                            <div class="app-card-mock" style="background:var(--primary); color:#fff;">
+                                <p style="font-size:12px; opacity:0.8;">إجمالي التبرعات</p>
+                                <h3 style="font-size:24px; margin:5px 0;">12,540 ر.س</h3>
+                                <p style="font-size:11px; opacity:0.8;">عدد المساهمات: 48</p>
+                            </div>
+                            <h4 style="margin:15px 0 10px 0; font-size:14px;">أبرز المشاريع</h4>
+                            <div class="app-card-mock">
+                                <div style="height:80px; background:#e3ede8; border-radius:10px; margin-bottom:10px"></div>
+                                <h5 style="font-size:13px">بناء مسجد</h5>
+                                <p style="font-size:11px; color:var(--text-muted)">ساهم في بناء مسجد بقرية محتاجة</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-section" id="why">
+        <h2 class="section-title">لماذا نماء؟</h2>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon-box"><i class="fa-solid fa-users"></i></div>
+                <h3>أثر مستمر</h3>
+                <p>ساهم في مشاريع تصنع فرقاً حقيقياً في حياة الناس.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon-box"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                <h3>سهولة التبرع</h3>
+                <p>تجربة بسيطة وسريعة في التبرع من أي مكان وفي أي وقت.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>موثوق وشفاف</h3>
+                <p>شراكات موثوقة وتقارير دورية لضمان شفافية تامة لصدقتك.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon-box"><i class="fa-solid fa-seedling"></i></div>
+                <h3>صدقة جارية</h3>
+                <p>مشاريع مستدامة يعود نفعها عليك في حياتك وبعد مماتك.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience-section">
+        <div class="experience-container">
+            <div class="experience-text">
+                <h2>تجربة تطبيق متكاملة</h2>
+                <p>واجهة سهلة وبسيطة تمنحك تجربة تبرع مميزة وتساعدك على متابعة أثر تبرعاتك أولاً بأول.</p>
+                <div class="store-badges">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store">
+                </div>
+            </div>
+            
+            <div class="experience-phones">
+                <div class="phone-frame exp-phone left">
+                    <div class="phone-content" style="padding:40px 20px;">
+                        <h4 style="font-size:14px; margin-bottom:15px;">مساهماتي</h4>
+                        <div class="app-card-mock">مساهمة 1</div>
+                        <div class="app-card-mock">مساهمة 2</div>
+                    </div>
+                </div>
+                <div class="phone-frame exp-phone center">
+                    <div class="phone-content" style="padding:40px 20px; background:#fafafa;">
+                        <div style="text-align:center; color:var(--primary); font-weight:bold;">نماء 🌱</div>
+                    </div>
+                </div>
+                <div class="phone-frame exp-phone right">
+                    <div class="phone-content" style="padding:40px 20px;">
+                        <h4 style="font-size:14px; margin-bottom:15px;">تفاصيل المشروع</h4>
+                        <div style="height:120px; background:#eee; border-radius:10px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="steps-section" id="how">
+        <h2 class="section-title">كيف يعمل نماء؟</h2>
+        <div class="steps-timeline">
+            <div class="step-node">
+                <div class="step-number-circle">1</div>
+                <h4>اختر المشروع</h4>
+                <p>تصفح المشاريع واختر ما ترغب في دعمه.</p>
+            </div>
+            <div class="step-node">
+                <div class="step-number-circle">2</div>
+                <h4>تبرع بسهولة</h4>
+                <p>اختر المبلغ المناسب وأكمل عملية التبرع بأمان.</p>
+            </div>
+            <div class="step-node">
+                <div class="step-number-circle">3</div>
+                <h4>تابع الأثر</h4>
+                <p>تابع تقدم المشروع واطلع على التقارير والنتائج.</p>
+            </div>
+            <div class="step-node">
+                <div class="step-number-circle">4</div>
+                <h4>أجر مستمر</h4>
+                <p>استمرار نفع المشروع ودعوات المستفيدين لك.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-section" id="projects">
+        <h2 class="section-title">مشاريع تصنع الأثر</h2>
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <div class="project-img-holder">
+                    <span class="project-tag">صحة</span>
+                    <i class="fa-solid fa-user-doctor"></i>
+                </div>
+                <div class="project-body">
+                    <h3>عيادة متنقلة</h3>
+                    <p>دعم تشغيل عيادة متنقلة لتقديم الرعاية الصحية في الفلبين.</p>
+                    <div class="progress-container">
+                        <div class="progress-bar-bg"><div class="progress-fill" style="width: 65%;"></div></div>
+                        <div class="progress-stats"><span>65%</span><span>المستهدف: 50,000 ر.س</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img-holder">
+                    <span class="project-tag">مياه</span>
+                    <i class="fa-solid fa-faucet-drip"></i>
+                </div>
+                <div class="project-body">
+                    <h3>بئر ماء</h3>
+                    <p>ساهم في حفر بئر ماء في منطقة محتاجة وتوفير مياه نظيفة.</p>
+                    <div class="progress-container">
+                        <div class="progress-bar-bg"><div class="progress-fill" style="width: 40%;"></div></div>
+                        <div class="progress-stats"><span>40%</span><span>المستهدف: 15,000 ر.س</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img-holder">
+                    <span class="project-tag">تعليم</span>
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div class="project-body">
+                    <h3>كفالة طالب</h3>
+                    <p>ادعم طالباً ليكمل تعليمه ويبني مستقبله الواعد.</p>
+                    <div class="progress-container">
+                        <div class="progress-bar-bg"><div class="progress-fill" style="width: 85%;"></div></div>
+                        <div class="progress-stats"><span>85%</span><span>المستهدف: 12,000 ر.س</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img-holder">
+                    <span class="project-tag">بناء</span>
+                    <i class="fa-solid fa-mosque"></i>
+                </div>
+                <div class="project-body">
+                    <h3>بناء مسجد</h3>
+                    <p>ساهم في بناء مسجد في قرية محتاجة لتقام فيه الصلوات.</p>
+                    <div class="progress-container">
+                        <div class="progress-bar-bg"><div class="progress-fill" style="width: 25%;"></div></div>
+                        <div class="progress-stats"><span>25%</span><span>المستهدف: 150,000 ر.س</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <a href="#" class="btn-outline">عرض جميع المشاريع</a>
+    </section>
+
+    <section class="stats-banner">
+        <div class="stats-container">
+            <div class="stat-item">
+                <i class="fa-solid fa-calendar-days"></i>
+                <h2>8</h2>
+                <p>سنوات من العطاء والنماء</p>
+            </div>
+            <div class="stat-item">
+                <i class="fa-solid fa-diagram-project"></i>
+                <h2>120+</h2>
+                <p>مشروع في مجالات مختلفة</p>
+            </div>
+            <div class="stat-item">
+                <i class="fa-solid fa-users"></i>
+                <h2>25,000+</h2>
+                <p>مساهم يشاركون الأثر</p>
+            </div>
+            <div class="stat-item">
+                <i class="fa-solid fa-heart"></i>
+                <h2>50,000+</h2>
+                <p>مستفيد من مشاريعنا</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section" id="testimonials">
+        <h2 class="section-title">ماذا يقول المساهمون؟</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                <p>"تطبيق رائع وسهل الاستخدام، أستطيع التبرع ومتابعة أثر تبرعاتي بكل شفافية ووضوح."</p>
+                <div class="user-info">
+                    <div class="user-avatar"><i class="fa-solid fa-user"></i></div>
+                    <h5>أحمد محمد</h5>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                <p>"أحببت فكرة المشاريع المستدامة، صدقة جارية يبقى أثرها ويستمر نفعها العظيم."</p>
+                <div class="user-info">
+                    <div class="user-avatar"><i class="fa-solid fa-user"></i></div>
+                    <h5>سارة عبد الله</h5>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                <p>"جزاكم الله خيراً على هذا التطبيق المبارك، منصة موثوقة ومميزة جداً في التعامل."</p>
+                <div class="user-info">
+                    <div class="user-avatar"><i class="fa-solid fa-user"></i></div>
+                    <h5>يوسف العتيبي</h5>
+                </div>
+            </div>
+        </div>
+        <div class="slider-dots">
+            <span class="dot"></span>
+            <span class="dot active"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-cta-container">
+            <div class="footer-cta-text">
+                <h2>حمل تطبيق نماء الآن</h2>
+                <p>وكن جزءاً من الأثر المستمر</p>
+                <div class="store-badges">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store">
+                </div>
+            </div>
+            <div class="footer-phone-wrapper">
+                <div class="phone-frame footer-phone">
+                    <div class="phone-content" style="display:flex; align-items:center; justify-content:center; background: #fff;">
+                        <span style="font-weight:bold; color:var(--primary); font-size:24px;">نماء 🌱</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-main-links">
+            <div class="footer-col">
+                <h4>عن نماء</h4>
+                <p>نماء منصة لصدقة الجارية تهدف إلى تمكين الأفراد من دعم المشاريع الخيرية المستدامة وإحداث أثر حقيقي في المجتمع.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="#">الرئيسية</a></li>
+                    <li><a href="#why">عن نماء</a></li>
+                    <li><a href="#projects">مشاريعنا</a></li>
+                    <li><a href="#how">كيف يعمل</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>الدعم والمساعدة</h4>
+                <ul>
+                    <li><a href="#">الأسئلة الشائعة</a></li>
+                    <li><a href="#">سياسة الخصوصية</a></li>
+                    <li><a href="#">تواصل معنا</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright-bar">
+            جميع الحقوق محفوظة © نماء 2026
+        </div>
+    </footer>
+
+</body>
+</html>ض
