@@ -1,0 +1,210 @@
+:root {
+    --primary: #0b5932;       /* الأخضر الداكن الأساسي للتطبيق */
+    --primary-rgb: 11, 89, 50;
+    --accent: #12a154;        /* الأخضر المضيء للأزرار والأيقونات */
+    --bg-light: #f4fbf7;      /* الخلفية الفاتحة المائلة للخضار */
+    --bg-white: #ffffff;
+    --text-dark: #1f382b;     /* نصوص غامقة متناسقة مع الهوية */
+    --text-muted: #667d71;
+    --card-shadow: 0 15px 35px rgba(11, 89, 50, 0.05);
+    --phone-border: #1a1a1a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Tajawal', sans-serif;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+.container {
+    height: 100vh;
+}
+
+.header {
+    min-height: 10%;
+    background-color: var(--bg-white);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 0 60px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: row-reverse;
+    color: var(--primary);
+    font-size: 30px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.logo-slogan {
+    font-size: 10px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 30px;
+}
+
+.navigation a{
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.navigation a:hover {
+    color: var(--primary);
+}
+
+.btn-download-nav {
+    background-color: var(--primary);
+    color: #fff;
+    padding: 8px 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: all 0.3s    ;
+}
+
+.btn-download-nav:hover {
+    background-color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.hero {
+    min-height: 90%;
+    background-color: var(--bg-light);
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    gap: 30px;
+    width: 50%;
+    padding: 0 30px;
+}
+
+.right h1 {
+    font-size: clamp(20px, 6vw, 50px);
+    color: var(--primary);
+}
+
+.right p {
+    text-align: end;
+    line-height: 1.5rem;
+}
+
+.btns {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+
+.btn-download-nav-hero {
+    display: inline-block;
+}
+
+.btn-about {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 8px 50px;
+    border-radius: 20px;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.btn-about:hover {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.left {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-phone {
+    background-color:  var(--bg-white);
+    width: 300px;
+    height: 550px;
+    border-radius: 30px;
+    background: url(img/1.png) no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+@media (max-width: 735px) {
+    .container {
+        min-height: 100vh;
+    }
+
+    .header {
+        flex-direction: column;
+        padding: 10px 10px;
+        gap: 10px;
+    }
+
+    .navigation {
+        gap: 20px;
+    }
+
+    .logo-slogan {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .right {
+        align-items: center;
+        width: 100%;
+        padding: 0 15px;
+        height: 50vh;
+    }
+
+
+    .right p {
+        line-height: 1.1rem;
+    }
+
+    .left {
+        width: 100%;
+    }
+}
